@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Ractive JS - Progess Bar</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<h2>Progress Bar Demo</h2>
+		<div id="progress-bar"></div>
+		<!-- Template -->
+		<script id="tpl-progress-bar" type="text/ractive">
+			{{#each bars}}
+				<div class="progress-wrapper">
+					<div class="{{this/limit*100 > 100 ? 'red-bar' : 'green-bar'}}" 
+						style="width:{{this/limit*100 > 100 ? 100 : this/limit*100}}%;">
+						<span class="progress-label">{{this}} - {{Math.round(this/limit*100)}}%</span>
+					</div>
+				</div>
+			{{/each}}
+
+			<div >
+				<select value='{{selectedBar}}'>
+					{{#each bars:index}}
+						<option value='{{index}}'>
+							Progress Bar {{index +1}}
+						</option>
+					{{/each}}
+				</select>
+				{{#each buttons}}
+					<button on-click='updateProgress:{{this}}'>{{this > 0 ? '+' : ''}}{{this}}</button>
+				{{/each}}
+			</div>
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+		
+		<!--<script src="lib/jquery-1.12.2.min.js"></script>
+		<script src='lib/ractive-0.7.3.js'></script>-->
+		<script src='js/progressBar.js'></script>
+	</body>
+	
+</html>
