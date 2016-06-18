@@ -1,0 +1,24 @@
+.progress-wrapper {
+    border: 1px solid #e6e5e5;
+    margin: 0 0 5px;
+	  height: 30px;
+    position: relative;
+    width: 40%;
+}
+.green-bar {
+    background-color: green;
+    height: inherit;
+}
+.red-bar {
+    background-color: red;
+    height: inherit;
+}
+.progress-label {
+    color: #000;
+    position: absolute;
+	  margin: 0;
+	  text-align: center;
+	  width: 100%;
+	  line-height: 30px;
+}
+
